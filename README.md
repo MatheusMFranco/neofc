@@ -16,12 +16,14 @@ Neo FC is a implementation from NeoFoodClub to Mobile. This app is a place to pu
 ## :rocket: Technologies
 
 This project was maid by these technologies:
-- [React Native][rn]
-- [Expo][expo]
+- React Native
+- Expo
+- Lottie
+- Jest
 
 ## :information_source: How to Use
 
-To execute this project, you should install the [Node.js][nodejs] on your computer.
+To execute this project, you should install the Node.js on your computer.
 
 Then, you must follow these steps:
 
@@ -36,7 +38,21 @@ $ npm install
 
 ```bash
 # Run the project
-$ expo start
+$ npm start
 ```
 
 The terminal will show you a QR Code, with this, you must install the Expo App on your phone and scan the code.
+
+### Test
+
+```bash
+# Run all tests
+$ npm test
+```
+
+### Coverage
+
+```bash
+# Run the test coverage
+$ npm run coverage
+```

@@ -19,6 +19,7 @@ export default function SplashScreen({navigation}) {
  
     return <View style={styles.container}>
         <LottieView
+            testID='splashscreen'
             ref={illustration}
             source={animation}
             autoPlay
