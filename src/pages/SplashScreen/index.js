@@ -7,9 +7,6 @@ import styles from './styles';
 import animation from '../../assets/animations/loading-utensils.json'
 
 export default function SplashScreen({navigation}) {
-    
-    const illustration = createRef();
-
     function startApplication() {
         navigation.reset({
             index: 0,
@@ -20,7 +17,6 @@ export default function SplashScreen({navigation}) {
     return <View style={styles.container}>
         <LottieView
             testID='splashscreen'
-            ref={illustration}
             source={animation}
             autoPlay
             loop={false}

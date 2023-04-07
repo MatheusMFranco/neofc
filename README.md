@@ -19,6 +19,7 @@ This project was maid by these technologies:
 - React Native
 - Expo
 - Lottie
+- SQLite
 - Jest
 
 ## :information_source: How to Use
