@@ -10,7 +10,7 @@ export default function SplashScreen({navigation}) {
     function startApplication() {
         navigation.reset({
             index: 0,
-            routes: [{name: 'History'}],
+            routes: [{name: 'Configuration'}],
         })
     }
  

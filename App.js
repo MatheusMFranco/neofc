@@ -1,6 +1,12 @@
-import { SafeAreaView } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+
 import AppRoutes from './App.routes';
+import { UserProvider } from './src/providers/User.provider';
 
 export default function App() {
-  return <AppRoutes />;
+  return <PaperProvider>
+      <UserProvider>
+        <AppRoutes />
+      </UserProvider>
+    </PaperProvider>;
 }

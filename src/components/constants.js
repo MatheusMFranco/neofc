@@ -1,0 +1,1 @@
+export const BUTTON_EEFECT = 'rgba(0, 0, 0, .32)';

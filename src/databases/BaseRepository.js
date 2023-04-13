@@ -2,10 +2,10 @@ import {
     buildCreateQuery,
     buildInsertQuery,
     buildUpdateQuery
-  } from './Query';
-  import Connection from './connection';
-  import messages from '../languages/english';
-  
+} from './Query';
+import Connection from './connection';
+import messages from '../languages/english';
+
 export default class BaseRepository {
     constructor(table, fields) {
         this.table = table;

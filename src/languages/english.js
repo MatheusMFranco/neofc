@@ -5,4 +5,7 @@ export default {
             user: 'Configuration updated successfully!',
         },
     },
+    title: {
+        configuration: 'Settings',
+    },
 };
