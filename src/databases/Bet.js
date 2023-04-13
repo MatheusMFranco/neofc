@@ -1,4 +1,8 @@
-import { buildCreateQuery, buildInsertQuery } from './Query';
+import {
+    buildCreateQuery,
+    buildInsertQuery,
+    buildSelectQuery,
+} from './Query';
 import Connection from './connection';
 import messages from '../languages/english';
 
@@ -28,18 +32,20 @@ export function create() {
 export async function insert(bet) {
 	return new Promise((resolve) =>
         db.transaction(transaction =>
-            transaction.executeSql(buildInsertQuery(table, fields), [
-                bet.bust,
-                bet.biggest,
-                bet.lowest,
-                bet.fine,
-                bet.date,
-                bet.round,
-                bet.id,
-            ],
+            transaction.executeSql(buildInsertQuery(table, fields), ...Object.values(bet),
                 () => resolve(messages.sql.succes.bet)),
             ),
         );
+}
+
+export async function selectById(id) {
+	return new Promise((resolve) => {
+		db.transaction((transaction) => {
+		transaction.executeSql(buildSelectQuery(table),
+        [id], (_, result) => 
+            resolve(result.rows._array));
+		});
+	});
 }
 
 export async function select(offset) {

@@ -1,5 +1,3 @@
-//TO DO: Test startApplication()
-
 import { render } from '@testing-library/react-native';
 import SplashScreen from '.';
 

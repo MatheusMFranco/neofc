@@ -53,11 +53,11 @@ export async function update(user) {
         );
 }
 
-export async function select() {
+export async function selectById(id) {
 	return new Promise((resolve) => {
 		db.transaction((transaction) => {
-		transaction.executeSql(`SELECT * FROM ${table};`,
-        [], (_, result) => 
+		transaction.executeSql(buildUpdateQuery(id),
+        [id], (_, result) => 
             resolve(result.rows._array));
 		});
 	});
