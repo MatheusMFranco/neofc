@@ -56,4 +56,9 @@ describe('Header', () => {
         expect(backButton).toBeNull();
         expect(configButton).toBeNull();
     });
+
+    test('should match the snapshot', () => {
+        const tree = render(<Header title="Test Header" />).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });

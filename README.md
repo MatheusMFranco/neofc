@@ -21,6 +21,7 @@ This project was maid by these technologies:
 - Lottie
 - SQLite
 - Jest
+- React Native Paper
 
 ## :information_source: How to Use
 

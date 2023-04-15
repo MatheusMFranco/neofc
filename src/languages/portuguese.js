@@ -5,7 +5,15 @@ export default {
             user: 'Configuração atualizada com sucesso!',
         },
     },
-    title: {
-        configuration: 'Configurações',
+    page: {
+        configuration: {
+            title: 'Configurações',
+            mode: 'Modo Suspenso',
+            language: 'Idioma',
+            theme: 'Tema Escuro',
+            notification: 'Notificação',
+            details: 'Detalhes',
+            custom: 'Customizado',
+        },
     },
 };

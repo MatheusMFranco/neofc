@@ -5,7 +5,15 @@ export default {
             user: 'Configuración actualizada con éxito!',
         },
     },
-    title: {
-        configuration: 'Ajustes',  
+    page: {
+        configuration: {
+            title: 'Ajustes',
+            mode: 'Modo Desplegable',
+            language: 'Idioma',
+            theme: 'Tema Oscuro',
+            notification: 'Notificación',
+            details: 'Detalles',
+            custom: 'Personalizado',
+        },
     },
 };

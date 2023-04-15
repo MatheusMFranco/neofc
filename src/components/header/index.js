@@ -4,6 +4,7 @@ import { IconButton, Text, useTheme } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
+import { ICON_SIZE } from '../constants';
 
 export default function Header({ title, back, config }) {
     const { colors } = useTheme();
@@ -17,18 +18,19 @@ export default function Header({ title, back, config }) {
         <View style={style.container}>
             { back && <IconButton
                     testID='back-button'
-                    style={style.button}
+                    iconColor={colors.onPrimaryContainer}
                     icon="chevron-left"
-                    size={50}
+                    size={ICON_SIZE}
                     onPress={goToBack}
             />}
             <Text style={style.title} testID='title'>{title}</Text>
         </View>
         {config && <IconButton
                 testID='config-button'
+                iconColor={colors.onPrimaryContainer}
                 style={style.button}
                 icon="cog"
-                size={50}
+                size={ICON_SIZE}
                 onPress={goToConfig}
         />}
     </View>

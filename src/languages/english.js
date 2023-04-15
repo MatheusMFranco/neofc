@@ -5,7 +5,15 @@ export default {
             user: 'Configuration updated successfully!',
         },
     },
-    title: {
-        configuration: 'Settings',
+    page: {
+        configuration: {
+            title: 'Settings',
+            mode: 'Dropdown Mode',
+            language: 'Language',
+            theme: 'Dark Theme',
+            notification: 'Notification',
+            details: 'Details',
+            custom: 'Custom',
+        },
     },
 };

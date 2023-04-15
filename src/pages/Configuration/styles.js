@@ -1,10 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 export default (color) => StyleSheet.create({
-    section: {
-
+    view: {
+        flex: 1,
+        backgroundColor: color.onSecondary,
     },
-    label: {
-
+    container: {
+        backgroundColor: color.onSecondary,
+    },
+    section: {
+        borderBottomWidth: .5,
+        borderBottomColor: color.onPrimaryContainer,
+    },
+    item: {
+        fontSize: 16,
+        color: color.onPrimaryContainer,
     },
 });
