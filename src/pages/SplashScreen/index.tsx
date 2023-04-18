@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 
 import LottieView from 'lottie-react-native';
@@ -11,7 +11,7 @@ export default function SplashScreen({navigation}) {
         navigation.reset({
             index: 0,
             routes: [{name: 'Configuration'}],
-        })
+        });
     }
  
     return <View style={styles.container}>

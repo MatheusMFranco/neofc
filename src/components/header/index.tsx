@@ -1,18 +1,18 @@
 import React from 'react';
 import { View } from 'react-native';
 import { IconButton, Text, useTheme } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
 import { ICON_SIZE } from '../constants';
 
-export default function Header({ title, back, config }) {
+export default function Header({ title, back = false, config = false }) {
     const { colors } = useTheme();
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProp<any>>();
     const style = styles(colors);
 
     const goToBack = () => navigation.goBack();
-    const goToConfig = () => navigation.navigate('Configuration')
+    const goToConfig = () => navigation.navigate('Configuration');
 
     return <View style={style.container}>
         <View style={style.container}>
@@ -28,7 +28,6 @@ export default function Header({ title, back, config }) {
         {config && <IconButton
                 testID='config-button'
                 iconColor={colors.onPrimaryContainer}
-                style={style.button}
                 icon="cog"
                 size={ICON_SIZE}
                 onPress={goToConfig}

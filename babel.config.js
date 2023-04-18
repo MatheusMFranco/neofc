@@ -5,6 +5,12 @@ module.exports = function(api) {
     plugins: [
       'react-native-reanimated/plugin',
       'react-native-paper/babel',
+      [
+        '@babel/plugin-transform-react-jsx',
+        {
+          runtime: 'automatic',
+        },
+      ],
     ],
   };
 };

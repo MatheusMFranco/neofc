@@ -23,7 +23,7 @@ export default function Configuration({navigation}) {
             <StatusBar />
             <Header
                 title={user?.language?.page?.configuration.title}
-                navigation={navigation}
+                {...navigation}
                 back
             />
             <List.Section style={style.container} testID='list'>
@@ -35,7 +35,6 @@ export default function Configuration({navigation}) {
                     testID='language'
                     right={
                         () => <IconButton
-                            style={style.button}
                             icon="chevron-right"
                             iconColor={colors.onPrimary}
                         />

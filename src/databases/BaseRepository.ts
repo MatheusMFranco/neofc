@@ -3,35 +3,35 @@ import {
     buildInsertQuery,
     buildUpdateQuery
 } from './Query';
-import Connection from './connection';
+import Connection from './Connection';
 import messages from '../languages/english';
+import { SQLResultSet } from 'expo-sqlite';
 
-export default class BaseRepository {
-    constructor(table, fields) {
-        this.table = table;
-        this.fields = fields;
+export default class BaseRepository<T> {
+
+    constructor(private table: string, private fields: string[]) {
         this.create();
-        this.table.push('id');
+        this.fields.push('id');
     }
 
-    create() {
+    private create() {
         const columns = [
             'id INT PRIMARY KEY',
             ...this.fields.map(field => `${field} TEXT`),
             ];
-        Connection.transaction(transaction => transaction.executeSql(buildCreateQuery(this.table, columns)));
+        Connection().transaction(transaction => transaction.executeSql(buildCreateQuery(this.table, columns)));
     }
 
     async insert(obj) {
         return new Promise(() =>
-            db.transaction(transaction =>
+        Connection().transaction(transaction =>
                 transaction.executeSql(buildInsertQuery(this.table, this.fields), ...Object.values(obj)),
             ));
     }
 
     async update(obj) {
         return new Promise((resolve) =>
-            db.transaction(transaction =>
+        Connection().transaction(transaction =>
                 transaction.executeSql(buildUpdateQuery(this.table, this.fields), ...Object.values(obj),
                 () => resolve(messages.sql.succes.user)),
             ),
@@ -40,9 +40,9 @@ export default class BaseRepository {
 
     async select(offset) {
         return new Promise((resolve) => {
-            db.transaction((transaction) => {
-                transaction.executeSql(`SELECT * FROM ${table} ORDER BY id LIMIT 10 OFFSET ?;`,
-                [offset], (_, result) => 
+            Connection().transaction((transaction) => {
+                transaction.executeSql(`SELECT * FROM ${this.table} ORDER BY id LIMIT 10 OFFSET ?;`,
+                [offset], (_, result: SQLResultSet) => 
                     resolve(result.rows._array));
                 });
         });
@@ -50,9 +50,9 @@ export default class BaseRepository {
         
     async selectById(id) {
         return new Promise((resolve) => {
-            db.transaction((transaction) => {
+            Connection().transaction((transaction) => {
                 transaction.executeSql(buildUpdateQuery(this.table, id),
-                [id], (_, result) => resolve(result.rows._array));
+                [id], (_, result: SQLResultSet) => resolve(result.rows._array));
             });
         });
     }

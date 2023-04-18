@@ -3,9 +3,9 @@ import { MD3DarkTheme, MD3LightTheme, Provider as PaperProvider } from 'react-na
 
 import english from '../languages/english';
 
-export const UserContext = createContext({});
+export const UserContext = createContext(null);
 
-export function UserProvider ({children}) {
+export function UserProvider ({ children }) {
     const [user, setUser] = useState({
         language: english,
         dark: false,

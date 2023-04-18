@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from 'react-native-testing-library';
 import Header from '.';
-import { fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 const mockedNavigation = jest.fn();
 const mockedGoBack = jest.fn();
