@@ -1,4 +1,5 @@
 export default {
+    selected: 'Português',
     sql: {
         succes: {
             bet: 'Aposta criada com sucesso!!',

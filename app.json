@@ -20,6 +20,9 @@
     },
     "web": {
       "favicon": "./src/assets/icons/pet-food.png"
-    }
+    },
+    "plugins": [
+      "expo-localization"
+    ]
   }
 }

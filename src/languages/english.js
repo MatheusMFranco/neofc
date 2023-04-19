@@ -1,4 +1,5 @@
 export default {
+    selected: 'English',
     sql: {
         succes: {
             bet: 'Bet created successfully!',

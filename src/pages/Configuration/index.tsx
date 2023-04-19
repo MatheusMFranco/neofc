@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { IconButton, List, Switch, useTheme } from 'react-native-paper';
 
 import styles from './styles';
+import pageStyles from '../pageStyles';
+
 import Header from '../../components/header';
 import { UserContext } from '../../providers/User.provider';
 
@@ -10,6 +12,7 @@ export default function Configuration({navigation}) {
     const { user, setUser } = useContext(UserContext);
     const { colors } = useTheme();
     const style = styles(colors);
+    const pageSheet = pageStyles(colors);
 
     const onToggleMode = () => setUser({...user, dropdown: !user?.dropdown });
     const onToggleCustom = () => setUser({...user, custom: !user?.custom });
@@ -19,8 +22,7 @@ export default function Configuration({navigation}) {
     const goToLanguagePage = () => navigation.navigate('Language');
 
 
-    return <SafeAreaView style={style.view} testID='view'>
-            <StatusBar />
+    return <SafeAreaView style={pageSheet.view} testID='view'>
             <Header
                 title={user?.language?.page?.configuration.title}
                 {...navigation}
@@ -29,7 +31,7 @@ export default function Configuration({navigation}) {
             <List.Section style={style.container} testID='list'>
                 <List.Item 
                     onPress={goToLanguagePage}
-                    style={style.section}
+                    style={pageSheet.section}
                     titleStyle={style.item}
                     title={user?.language?.page?.configuration?.language}
                     testID='language'

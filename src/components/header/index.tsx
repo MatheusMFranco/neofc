@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import { IconButton, Text, useTheme } from 'react-native-paper';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 
@@ -15,6 +15,7 @@ export default function Header({ title, back = false, config = false }) {
     const goToConfig = () => navigation.navigate('Configuration');
 
     return <View style={style.container}>
+        <StatusBar />
         <View style={style.container}>
             { back && <IconButton
                     testID='back-button'

@@ -18,10 +18,12 @@ Neo FC is a implementation from NeoFoodClub to Mobile. This app is a place to pu
 This project was maid by these technologies:
 - React Native
 - Expo
+- TypeScript
 - Lottie
 - SQLite
 - Jest
 - React Native Paper
+- Localization
 
 ## :information_source: How to Use
 
