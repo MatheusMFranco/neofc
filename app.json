@@ -4,7 +4,7 @@
     "slug": "neofc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icons/pet-food.png",
     "userInterfaceStyle": "light",
     "assetBundlePatterns": [
       "**/*"
