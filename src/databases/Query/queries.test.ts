@@ -27,7 +27,7 @@ describe('Query Builder', () => {
 
     it('should build update query', () => {
         const query = buildUpdateQuery(table, fields);
-        const expected = 'UPDATE Person SET head = ?, body = ? WHERE id = ?;';
+        const expected = 'UPDATE Person SET head = ?, body = ?, id = ? WHERE id = ?;';
         expect(query).toBe(expected);
     });
 
