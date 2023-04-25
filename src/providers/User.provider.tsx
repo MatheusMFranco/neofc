@@ -49,6 +49,8 @@ export function UserProvider({ children }) {
     notification: false,
     details: false,
     custom: false,
+    desktop: false,
+    brain: false,
   };
 
   const parse = (currentUser: User): User => {
@@ -59,6 +61,8 @@ export function UserProvider({ children }) {
       notification: !!+currentUser.notification,
       details: !!+currentUser.details,
       custom: !!+currentUser.custom,
+      desktop: !!+currentUser.desktop,
+      brain: !!+currentUser.brain,
       language: JSON.parse(currentUser.language),
     }
   };

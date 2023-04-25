@@ -6,4 +6,6 @@ export interface User {
     notification: boolean,
     details: boolean,
     custom: boolean,
+    desktop: boolean,
+    brain: boolean,
 }

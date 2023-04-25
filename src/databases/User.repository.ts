@@ -10,6 +10,8 @@ export default class UserRepository extends BaseRepository<User> {
             'details',
             'custom',
             'language',
+            'desktop',
+            'brain',
         ]);
     }
 }
